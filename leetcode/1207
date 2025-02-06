@@ -1,0 +1,24 @@
+////problem no 1207
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        sort(arr.begin(),arr.end());
+        vector<int>a;
+        for(int i=0;i<arr.size();i++){
+            int count=0;
+            while(i+1<arr.size()&&arr[i]==arr[i+1]){
+                count++;
+                i++;
+            }
+            a.push_back(count);
+        }
+        sort(a.begin(),a.end());
+        for(int i=1;i<a.size();i++){
+            if(a[i]==a[i-1]){
+                return false;
+            }
+        }
+        return true;
+    
+    }
+};
