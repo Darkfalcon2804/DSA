@@ -1,0 +1,17 @@
+//Problem no 1009
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+      int t=n;
+      int extra=0;
+      if(n==0){
+        return 1;
+      }  
+      while(t!=0){
+        extra=(extra<<1)|1;
+        t=t>>1;
+      }
+      int ans=(~n)&extra;
+      return ans;
+    }
+};
