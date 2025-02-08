@@ -1,0 +1,12 @@
+////palindrome 9
+bool isPalindrome(int x) {
+   long long int rev=0,t=x;
+   long int ld;
+    while(x>0){
+        ld=x%10;
+        rev=rev*10+ld;
+        x/=10;
+    }
+    if(rev==t){return true;}
+    else return false;
+}
